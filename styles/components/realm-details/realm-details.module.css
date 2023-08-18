@@ -1,0 +1,124 @@
+.realmDetailsBackground {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(4px 4px 8px rgb(var(--magenta-main)))
+    drop-shadow(-4px -4px 8px rgb(var(--magenta-main)));
+}
+
+.realmDetailsBackground::before {
+  --background-size: 1rem;
+
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(var(--magenta-main));
+  clip-path: polygon(
+    var(--background-size) 0,
+    calc(100% - var(--background-size)) 0,
+    calc(100% - var(--background-size)) var(--background-size),
+    100% var(--background-size),
+    100% calc(100% - var(--background-size)),
+    calc(100% - var(--background-size)) calc(100% - var(--background-size)),
+    calc(100% - var(--background-size)) 100%,
+    var(--background-size) 100%,
+    var(--background-size) calc(100% - var(--background-size)),
+    0 calc(100% - var(--background-size)),
+    0 var(--background-size),
+    var(--background-size) var(--background-size)
+  );
+
+  z-index: -2;
+}
+.realmDetailsBackground::after {
+  --background-size: 1rem;
+
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(var(--magenta-main), 0.12) 0px,
+    rgba(var(--magenta-main), 0.12) 2px,
+    rgba(var(--background-main), 0.12) 2px,
+    rgba(var(--background-main), 0.85) 9px
+  );
+  clip-path: polygon(
+    var(--background-size) 0,
+    calc(100% - var(--background-size)) 0,
+    calc(100% - var(--background-size)) var(--background-size),
+    100% var(--background-size),
+    100% calc(100% - var(--background-size)),
+    calc(100% - var(--background-size)) calc(100% - var(--background-size)),
+    calc(100% - var(--background-size)) 100%,
+    var(--background-size) 100%,
+    var(--background-size) calc(100% - var(--background-size)),
+    0 calc(100% - var(--background-size)),
+    0 var(--background-size),
+    var(--background-size) var(--background-size)
+  );
+  background-color: rgb(var(--background-main));
+
+  z-index: -1;
+}
+.realmDetails {
+  width: 75rem;
+  height: 41.75rem;
+  position: relative;
+}
+.realmDetails__closeButton {
+  position: absolute;
+  right: -3.75rem;
+  top: 0;
+  width: 3rem;
+  height: 3rem;
+
+  background: conic-gradient(
+      transparent 0.25turn,
+      rgb(var(--magenta-main)) 0.25turn 0.5turn,
+      transparent 0.5turn 0.75turn,
+      rgb(var(--magenta-main)) 0.75turn
+    )
+    top left / 66.66666666% 66.66666666% repeat;
+}
+
+.realmDetails__heder {
+  position: absolute;
+  border: 3px solid rgb(var(--magenta-main));
+  background-color: rgb(var(--background-main));
+  width: 35.5rem;
+  height: 6.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  top: -3.125rem;
+  transform: translate(-50%, 0);
+  color: white;
+  font-size: 3.375rem;
+  box-shadow: 0px 0px 10px 4px rgba(var(--magenta-main), 80%);
+}
+
+.realmDetails_content {
+  color: #ffffff;
+  display: flex;
+  padding: 2rem 3.5rem 4.25rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.realmDetails_content__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.realmDetails_content > * {
+  z-index: 9999999999999;
+}

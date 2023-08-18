@@ -1,0 +1,14 @@
+.accessRights {
+  color: rgb(var(--magenta-secondary));
+  font-size: 1.875rem;
+  display: flex;
+  align-items: flex-end;
+  line-height: 0.75;
+  font-weight: 400;
+  max-height: 7.25rem;
+}
+
+.accessRights p {
+  padding-bottom: 0.25rem;
+  text-shadow: 0px 0px 5px rgb(var(--magenta-shadow));
+}

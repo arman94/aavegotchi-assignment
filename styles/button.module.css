@@ -1,0 +1,93 @@
+.button {
+  position: relative;
+  width: 19rem;
+  height: 4rem;
+  display: inline-block;
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 2.3225rem;
+  color: rgb(var(--main-text-color));
+  background-color: #008dca;
+  box-sizing: content-box;
+}
+.button::after,
+.button::before {
+  content: '';
+  position: absolute;
+  background-color: #00456c;
+  z-index: -1;
+}
+.button::after {
+  bottom: -0.5rem;
+  top: -0.5rem;
+  left: 0;
+  right: 0;
+}
+.button::before {
+  left: -0.5rem;
+  right: -0.5rem;
+  bottom: 0;
+  top: 0;
+}
+
+.button > div {
+  border-top: 0.5rem solid #33daff;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.button > div::before {
+  content: '';
+  position: absolute;
+  top: 0rem;
+  left: 0;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  background-color: #02a5c9;
+  z-index: -1;
+}
+
+.button__cyan {
+  background-color: #008dca;
+}
+.button__cyan::after,
+.button__cyan::before {
+  background-color: #00456c;
+}
+.button__cyan > div {
+  border-top: 0.5rem solid #33daff;
+}
+.button__cyan > div::before {
+  background-color: #02a5c9;
+}
+
+.button__purple {
+  background-color: #5f2ec8;
+}
+.button__purple::after,
+.button__purple::before {
+  background-color: #3d0980;
+}
+.button__purple > div {
+  border-top: 0.5rem solid #9b6cff;
+}
+.button__purple > div::before {
+  background-color: #8348ff;
+}
+
+.button__pink {
+  background-color: #a712a1;
+}
+.button__pink::after,
+.button__pink::before {
+  background-color: #3d003a;
+}
+.button__pink > div {
+  border-top: 0.5rem solid #f643f0;
+}
+.button__pink > div::before {
+  background-color: #c82ac2;
+}

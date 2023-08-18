@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --max-width: 1100px;
+  --border-radius: 12px;
+  --font-family: 'PixelarRegularW01-Regular';
+
+  --background-main: 0, 0, 0;
+  --main-text-color: 255, 255, 255;
+  --magenta-main: 200, 42, 194;
+  --magenta-secondary: 243, 28, 237;
+  --magenta-shadow: 200, 42, 194;
+
+  --magenta-text: 249, 52, 243;
+  --cyan-text: 59, 204, 255;
+  --green-text: 82, 187, 52;
+  --red-text: 223, 43, 37;
+
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  --tile-start-rgb: 239, 245, 249;
+  --tile-end-rgb: 228, 232, 233;
+  --tile-border: conic-gradient(
+    #00000080,
+    #00000040,
+    #00000030,
+    #00000020,
+    #00000010,
+    #00000010,
+    #00000080
+  );
+}
+
+@font-face {
+  font-family: 'PixelarRegularW01-Regular';
+  src: url('//db.onlinewebfonts.com/t/b2e75c336df191233b3096682c9ee6be.eot');
+  src: url('//db.onlinewebfonts.com/t/b2e75c336df191233b3096682c9ee6be.eot?#iefix')
+      format('embedded-opentype'),
+    url('//db.onlinewebfonts.com/t/b2e75c336df191233b3096682c9ee6be.woff2')
+      format('woff2'),
+    url('//db.onlinewebfonts.com/t/b2e75c336df191233b3096682c9ee6be.woff')
+      format('woff'),
+    url('//db.onlinewebfonts.com/t/b2e75c336df191233b3096682c9ee6be.ttf')
+      format('truetype'),
+    url('//db.onlinewebfonts.com/t/b2e75c336df191233b3096682c9ee6be.svg#PixelarRegularW01-Regular')
+      format('svg');
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+
+    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
+    --secondary-glow: linear-gradient(
+      to bottom right,
+      rgba(1, 65, 255, 0),
+      rgba(1, 65, 255, 0),
+      rgba(1, 65, 255, 0.3)
+    );
+
+    --tile-start-rgb: 2, 13, 46;
+    --tile-end-rgb: 2, 5, 19;
+    --tile-border: conic-gradient(
+      #ffffff80,
+      #ffffff40,
+      #ffffff30,
+      #ffffff20,
+      #ffffff10,
+      #ffffff10,
+      #ffffff80
+    );
+
+    --callout-rgb: 20, 20, 20;
+    --callout-border-rgb: 108, 108, 108;
+    --card-rgb: 100, 100, 100;
+    --card-border-rgb: 200, 200, 200;
+  }
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: var(--font-family) !important;
+  overflow-x: hidden;
+}
+
+html {
+  tab-size: 4;
+  line-height: 1.15;
+  max-width: 100vw;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+}
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+.ModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.16);
+  z-index: 99999999999;
+}
+
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  outline: none;
+}
